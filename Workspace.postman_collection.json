@@ -339,7 +339,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"id\": \"\",\r\n    \"created\": \"2022-11-09T01:58:22.052Z\",\r\n    \"lastModified\": \"2029-11-09T01:58:22.052Z\",\r\n    \"userId\": \"{{userId}}\",\r\n    \"workspaceId\": \"{{workspaceId}}\",\r\n    \"name\": \"before update\",\r\n    \"description\": \"spend money account\",\r\n    \"type\": \"DESIGN\",\r\n    \"tags\": []\r\n}"
+					"raw": "{\r\n    \"id\": \"\",\r\n    \"created\": \"2022-11-09T01:58:22.052Z\",\r\n    \"lastModified\": \"2029-11-09T01:58:22.052Z\",\r\n    \"userId\": \"{{userId}}\",\r\n    \"workspaceId\": \"{{workspaceId}}\",\r\n    \"name\": \"testing descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting descriptiontesting description\",\r\n    \"description\": \"123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890\",\r\n    \"type\": \"DESIGN\",\r\n    \"tags\": []\r\n}"
 				},
 				"url": {
 					"raw": "https://api.octoperf.com/design/projects?workspaceId={{workspaceId}}&userId={{userId}}",
@@ -563,6 +563,138 @@
 							"key": "workspaceId",
 							"value": "{{workspaceId}}"
 						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createNewWorkSpace",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function() {\r",
+							"    pm.response.to.have.status(201);    \r",
+							"})\r",
+							"\r",
+							"var jsonRespone = pm.response.json();\r",
+							"console.log(jsonRespone);\r",
+							"postman.setEnvironmentVariable(\"workSpaceId\", jsonRespone.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authority",
+						"value": "api.octoperf.com"
+					},
+					{
+						"key": "accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "accept-language",
+						"value": "en-US,en;q=0.9,th;q=0.8"
+					},
+					{
+						"key": "authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJvY3RvcGVyZiIsImlkIjoiamtadmJJQUJXMkpyRmdueU8yYmIiLCJleHAiOjE2Njg2MTcwMTgsImlhdCI6MTY2ODUzMDYxOCwiaGFzaCI6IjU4Zjk0NzJkOGYwNzhhZWJmMTYyM2E4ZjA4YjFiMmE1In0.lYux4B-6jC3v8PxRz-i3Hh3eZDHVuQwoKMSTryjoiB0"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json;charset=UTF-8"
+					},
+					{
+						"key": "cookie",
+						"value": "_ga=GA1.2.1355648755.1667660588; slaask-token-5a5eed8e193aa4456766852b0d3bdd64=iszwntlsdciuz1r1gva34jz83haa1z27xrwlwq9693; __stripe_mid=3bcdbc54-cd9c-4f94-b5ed-43233c4e688ecab73b; _gid=GA1.2.1694248374.1668529317; __stripe_sid=0eecc139-94f1-4b1d-b5a3-d8abaf353a420ad92a; _gat_gtag_UA_68231741_1=1; _gat=1"
+					},
+					{
+						"key": "origin",
+						"value": "https://api.octoperf.com"
+					},
+					{
+						"key": "referer",
+						"value": "https://api.octoperf.com/app/"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"107\", \"Chromium\";v=\"107\", \"Not=A?Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"\",\r\n    \"created\": \"2022-11-15T16:45:48.049Z\",\r\n    \"lastModified\": \"2022-11-15T16:45:48.049Z\",\r\n    \"userId\": \"jkZvbIABW2JrFgnyO2bb\",\r\n    \"name\": \"Test1\",\r\n    \"description\": \"Testtest\"\r\n}"
+				},
+				"url": {
+					"raw": "https://api.octoperf.com/workspaces",
+					"protocol": "https",
+					"host": [
+						"api",
+						"octoperf",
+						"com"
+					],
+					"path": [
+						"workspaces"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteWorkSpace",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJvY3RvcGVyZiIsImlkIjoiamtadmJJQUJXMkpyRmdueU8yYmIiLCJleHAiOjE2Njg2MTU3NzUsImlhdCI6MTY2ODUyOTM3NSwiaGFzaCI6IjU4Zjk0NzJkOGYwNzhhZWJmMTYyM2E4ZjA4YjFiMmE1In0.twG-HBOuv9_RxTMHfWHpeWtZ-kX9U2F4wqEMzeQrv30"
+					}
+				],
+				"url": {
+					"raw": "https://api.octoperf.com/workspaces/{{workSpaceId}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"octoperf",
+						"com"
+					],
+					"path": [
+						"workspaces",
+						"{{workSpaceId}}"
 					]
 				}
 			},
